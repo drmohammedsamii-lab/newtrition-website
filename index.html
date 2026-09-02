@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newtrition · منظومة تغذية شخصية قابلة للتفسير</title>
+<meta name="description" content="Newtrition منظومة تغذية شخصية بتبدأ من تقييم حالتك، وتحوّل بياناتك وعاداتك وأكلك الحقيقي إلى خطة واضحة قابلة للتعديل مع تقدمك.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A; --navy-soft:#2E4270; --burgundy:#7B2D3B; --gold:#B8935F;
+    --gray:#5C6373; --rule:#DFE3EA; --paper:#F7F5F1; --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Tajawal',sans-serif;color:var(--navy);background:var(--paper);line-height:1.75;font-size:17px;}
+  h1,h2,h3,h4,.brand{font-family:'Cairo',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(247,245,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .brand{font-weight:800;font-size:22px;color:var(--navy);display:flex;align-items:baseline;gap:6px;}
+  .brand span{color:var(--burgundy);font-weight:600;font-size:15px;}
+  nav ul{display:flex;gap:26px;list-style:none;}
+  nav a{font-size:14.5px;color:var(--navy-soft);font-weight:500;transition:color .2s;}
+  nav a:hover{color:var(--burgundy);}
+  .cta-btn{background:var(--navy);color:var(--white);padding:11px 26px;border-radius:3px;font-family:'Cairo',sans-serif;font-weight:600;font-size:15px;border:1px solid var(--navy);transition:.2s;white-space:nowrap;display:inline-block;}
+  .cta-btn:hover{background:var(--navy-soft);}
+  .cta-btn.outline{background:transparent;color:var(--navy);}
+  .cta-btn.burgundy{background:var(--burgundy);border-color:var(--burgundy);}
+  .cta-btn.burgundy:hover{background:#63232F;}
+
+  .hero{padding:88px 0 72px;position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset-inline-end:-160px;top:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(27,42,74,.07),transparent 70%);}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;}
+  .kicker{display:inline-block;font-size:14px;color:var(--burgundy);font-weight:700;border-inline-start:3px solid var(--burgundy);padding-inline-start:12px;margin-bottom:22px;}
+  .hero h1{font-size:40px;line-height:1.38;font-weight:800;color:var(--navy);margin-bottom:22px;}
+  .hero p.lead{font-size:17.5px;color:var(--gray);max-width:520px;margin-bottom:32px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-figure{background:var(--navy);border-radius:4px;padding:36px;color:var(--white);}
+  .hero-figure h3{font-size:16px;margin-bottom:20px;color:#EDE8DF;font-weight:600;}
+  .flow-mini{display:flex;flex-direction:column;}
+  .flow-mini .fi{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid rgba(255,255,255,.14);}
+  .flow-mini .fi:first-child{border-top:none;}
+  .flow-mini .fi b{font-family:'Cairo',sans-serif;color:var(--gold);font-size:14px;min-width:20px;}
+  .flow-mini .fi span{font-size:14.5px;color:#C7CEDD;}
+
+  section{padding:80px 0;}
+  section.tight{padding:56px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head .kicker{margin-bottom:14px;}
+  .section-head h2{font-size:30px;color:var(--navy);font-weight:800;margin-bottom:14px;}
+  .section-head p{color:var(--gray);font-size:16.5px;}
+  .white{background:var(--white);}
+
+  /* problem */
+  .problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+  .problem-card{background:var(--white);padding:28px 26px;}
+  .problem-card h4{font-size:16.5px;color:var(--navy);margin-bottom:8px;font-weight:700;}
+  .problem-card p{font-size:14.5px;color:var(--gray);}
+
+  /* pillars (H.E.A.L.) */
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+  .pillar{background:var(--white);padding:32px 26px;}
+  .pillar .mark{font-family:'Cairo',sans-serif;font-weight:800;font-size:26px;color:var(--gold);margin-bottom:14px;}
+  .pillar h4{font-size:16.5px;color:var(--navy);margin-bottom:8px;font-weight:700;}
+  .pillar p{font-size:14px;color:var(--gray);}
+
+  /* system steps */
+  .journey-list{counter-reset:step;}
+  .step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--rule);}
+  .step:last-child{border-bottom:1px solid var(--rule);}
+  .step .num{counter-increment:step;font-family:'Cairo',sans-serif;font-weight:800;color:var(--rule);font-size:32px;line-height:1;}
+  .step .num::before{content: counter(step, decimal-leading-zero);}
+  .step h4{font-size:18px;color:var(--navy);font-weight:700;margin-bottom:6px;}
+  .step p{color:var(--gray);font-size:14.5px;max-width:640px;}
+
+  /* explainability */
+  .explain-box{background:var(--navy);border-radius:4px;padding:36px;color:var(--white);}
+  .explain-q{font-family:'Cairo',sans-serif;font-weight:700;font-size:18px;color:var(--gold);margin-bottom:10px;}
+  .explain-a{font-size:15px;color:#C7CEDD;margin-bottom:22px;}
+  .explain-a:last-child{margin-bottom:0;}
+
+  /* food intelligence flow */
+  .fi-flow{display:flex;align-items:stretch;gap:0;border:1px solid var(--rule);background:var(--white);flex-wrap:wrap;}
+  .fi-step{flex:1 1 0;min-width:150px;padding:22px 18px;border-inline-end:1px solid var(--rule);}
+  .fi-step:last-child{border-inline-end:none;}
+  .fi-step .k{font-size:12px;color:var(--burgundy);font-weight:700;font-family:'Cairo',sans-serif;margin-bottom:8px;}
+  .fi-step p{font-size:14px;color:var(--navy-soft);}
+
+  /* results honest placeholder */
+  .results-box{border:1px dashed var(--rule);background:var(--white);padding:40px 32px;text-align:center;border-radius:4px;}
+  .results-box h4{font-size:18px;color:var(--navy);margin-bottom:10px;}
+  .results-box p{color:var(--gray);font-size:15px;max-width:480px;margin:0 auto;}
+
+  /* programs */
+  .prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--rule);background:var(--white);}
+  .prog{padding:32px 28px;border-inline-end:1px solid var(--rule);border-top:1px solid var(--rule);display:flex;flex-direction:column;}
+  .prog-grid .prog:nth-child(2n){border-inline-end:none;}
+  .prog-grid .prog:nth-child(-n+2){border-top:none;}
+  .prog .tag{font-size:12.5px;font-weight:700;color:var(--burgundy);margin-bottom:14px;font-family:'Cairo',sans-serif;}
+  .prog h4{font-size:19px;color:var(--navy);margin-bottom:10px;font-weight:700;}
+  .prog p{color:var(--gray);font-size:14.5px;margin-bottom:18px;flex-grow:1;}
+  .prog .meta{font-size:13.5px;color:var(--navy-soft);border-top:1px solid var(--rule);padding-top:14px;font-weight:500;}
+  .prog.flagship{background:var(--navy);color:var(--white);}
+  .prog.flagship h4{color:var(--white);}
+  .prog.flagship p{color:#C7CEDD;}
+  .prog.flagship .tag{color:var(--gold);}
+  .prog.flagship .meta{color:#C7CEDD;border-top-color:rgba(255,255,255,.18);}
+  .price-note{font-size:13.5px;color:var(--gray);margin-top:18px;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;}
+  .about-card{background:var(--navy);color:var(--white);padding:38px 32px;border-radius:4px;}
+  .about-card .role{color:var(--gold);font-size:14px;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif;}
+  .about-card h3{font-size:22px;margin-bottom:16px;}
+  .about-card p{font-size:14.5px;color:#C7CEDD;}
+  .credentials{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);}
+  .credentials li{list-style:none;font-size:14px;color:#C7CEDD;padding:6px 0;}
+  .about-text h2{font-size:28px;color:var(--navy);margin-bottom:18px;font-weight:800;}
+  .about-text p{color:var(--gray);font-size:15.5px;margin-bottom:16px;}
+  .about-text ul{margin-top:18px;}
+  .about-text li{list-style:none;padding-inline-start:22px;position:relative;color:var(--navy-soft);font-size:15px;margin-bottom:12px;}
+  .about-text li::before{content:"—";position:absolute;inset-inline-start:0;color:var(--burgundy);}
+
+  /* faq */
+  details{border-top:1px solid var(--rule);padding:18px 0;}
+  details:last-child{border-bottom:1px solid var(--rule);}
+  summary{cursor:pointer;font-family:'Cairo',sans-serif;font-weight:700;font-size:16px;color:var(--navy);list-style:none;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";float:inline-end;color:var(--burgundy);font-weight:700;}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px;color:var(--gray);font-size:15px;}
+
+  /* cta band */
+  .cta-band{background:var(--burgundy);color:var(--white);text-align:center;}
+  .cta-band h2{font-size:28px;margin-bottom:14px;}
+  .cta-band p{color:#EBD9DC;font-size:15.5px;max-width:520px;margin:0 auto 28px;}
+  .cta-band .cta-btn{background:var(--white);color:var(--burgundy);border-color:var(--white);}
+  .cta-band .cta-btn:hover{background:#EBD9DC;}
+
+  footer{background:var(--navy);color:#C7CEDD;padding:52px 0 26px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+  footer h5{color:var(--white);font-family:'Cairo',sans-serif;font-size:15px;margin-bottom:16px;}
+  footer .brand{color:var(--white);}
+  footer .brand span{color:var(--gold);}
+  footer p{font-size:14px;max-width:340px;margin-top:12px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:14.5px;}
+  footer a:hover{color:var(--white);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;font-size:12.5px;color:#8B95B0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  .sticky-cta{position:fixed;inset-inline:0;bottom:0;z-index:60;background:var(--navy);padding:12px 20px;text-align:center;display:none;}
+  .sticky-cta a{color:var(--white);font-family:'Cairo',sans-serif;font-weight:700;font-size:15px;display:block;}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .pillars{grid-template-columns:repeat(2,1fr);}
+    .problem-grid{grid-template-columns:1fr;}
+    .prog-grid{grid-template-columns:1fr;}
+    .prog-grid .prog{border-inline-end:none !important;}
+    .prog-grid .prog:nth-child(-n+2){border-top:1px solid var(--rule);}
+    .prog-grid .prog:first-child{border-top:none !important;}
+    .about-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    nav ul{display:none;}
+    .hero h1{font-size:30px;}
+    .fi-flow{flex-direction:column;}
+    .fi-step{border-inline-end:none !important;border-top:1px solid var(--rule);}
+    .fi-step:first-child{border-top:none !important;}
+    body{padding-bottom:58px;}
+    .sticky-cta{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <div class="brand">Newtrition <span>· Dr / Sami</span></div>
+    <nav><ul>
+      <li><a href="#system">كيف بنشتغل</a></li>
+      <li><a href="#results">النتائج</a></li>
+      <li><a href="#programs">البرامج</a></li>
+      <li><a href="#heal">H.E.A.L.</a></li>
+      <li><a href="#about">د. سامي</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul></nav>
+    <a href="assessment.html" class="cta-btn">ابدأ تقييمك</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Newtrition — منظومة تغذية شخصية</span>
+      <h1>مش كل زيادة وزن محتاجة رجيم جديد.<br>محتاجة نفهم حالتك الأول.</h1>
+      <p class="lead">Newtrition بتبدأ من تقييم حالتك، وتحوّل بياناتك وعاداتك وأكلك الحقيقي إلى خطة واضحة قابلة للتعديل مع تقدمك — مش ورقة بتاخدها وتمشي.</p>
+      <div class="hero-actions">
+        <a href="assessment.html" class="cta-btn burgundy">ابدأ تقييم حالتك</a>
+        <a href="#system" class="cta-btn outline">شوف إزاي بنشتغل</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <h3>من التقييم للقرار… ومن القرار للنتيجة</h3>
+      <div class="flow-mini">
+        <div class="fi"><b>01</b><span>Assess — نفهم حالتك بالكامل</span></div>
+        <div class="fi"><b>02</b><span>Interpret — نحدد الأولويات والعوامل المؤثرة</span></div>
+        <div class="fi"><b>03</b><span>Build — نبني خطة واضحة ليك انت</span></div>
+        <div class="fi"><b>04</b><span>Adapt — نعدّل حسب استجابتك الفعلية</span></div>
+        <div class="fi"><b>05</b><span>Maintain — نثبّت النتيجة على المدى الطويل</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="white tight" id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">ليه الدايت العادي بيفشل</span>
+      <h2>مش ناقصك إرادة أكتر. ناقصك تشخيص أدق</h2>
+      <p>معظم الخطط الجاهزة بتفترض إن كل الناس زي بعض، ومفيهاش مساحة لما بيحصل لما الحياة الواقعية تتدخل.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card"><h4>افتراضات عامة</h4><p>خطة واحدة بتتوزع على مية شخص مختلفين في الهرمونات والعادات والظروف.</p></div>
+      <div class="problem-card"><h4>مش متماشية مع حياتك</h4><p>مواعيد شغل، أكل بيتي، مناسبات — الخطة بتتجاهلها بدل ما تتبنى عليها.</p></div>
+      <div class="problem-card"><h4>مفيش تشخيص حقيقي للالتزام</h4><p>لما العميل يوقف الالتزام، مفيش حد بيسأل ليه، بس بيتقال "خليك أقوى".</p></div>
+      <div class="problem-card"><h4>مفيش نظام تعديل</h4><p>الخطة بتفضل زي ما هي حتى لو جسمك أو ظروفك اتغيرت، لحد ما تفشل بالكامل.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="heal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">منهج الفهم — H.E.A.L.</span>
+      <h2>قبل أي خطة، بنفهم حالتك من أربع محاور</h2>
+      <p>H.E.A.L. بيساعدنا نفهم حالتك. اللي بيحوّل الفهم ده لقرارات وخطوات فعلية هو نظام Newtrition اللي جاي بعده.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="mark">H</div><h4>الهرمونات</h4><p>نقيّم عوامل زي الأنسولين، الكورتيزول والتوتر، الغدة الدرقية، وهرمونات الدورة اللي ممكن تأثر على وزنك.</p></div>
+      <div class="pillar"><div class="mark">E</div><h4>المشاعر</h4><p>أكل التوتر، الملل، المكافأة، أو الحرمان اللي بيرجّع نفسه أكل — بنفهم السياق العاطفي وراء الأكل.</p></div>
+      <div class="pillar"><div class="mark">A</div><h4>الشهية والتمثيل الغذائي</h4><p>تاريخك مع الدايتات السابقة، وإزاي نبني وجبات وانضباط غذائي يقدر يستمر فعلًا.</p></div>
+      <div class="pillar"><div class="mark">L</div><h4>نمط الحياة</h4><p>النوم، الحركة، الروتين اليومي — البيئة اللي بتعيش فيها بتحدد نجاح أي خطة أكتر من الخطة نفسها.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="white" id="system">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">نظام Newtrition</span>
+      <h2>من الفهم لقرار فعلي — خمس مراحل</h2>
+      <p>كل مرحلة بتنتج حاجة ملموسة، مش خطوة نظرية.</p>
+    </div>
+    <div class="journey-list">
+      <div class="step"><div class="num"></div><div><h4>Assess — التقييم</h4><p>بيانات جسمك، تاريخ وزنك، سلوكك مع الأكل، محاولاتك السابقة، وأي عوائق قدامك.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Interpret — التفسير</h4><p>نحدد إيه أهم العوامل المؤثرة في حالتك، وإيه اللي محتاج أولوية دلوقتي.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Build — البناء</h4><p>خطة غذائية واضحة مبنية على أكل بيتك ومقاساتك، مش قالب جاهز.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Adapt — التعديل</h4><p>متابعة دورية بتحدد لو الخطة لسه مناسبة، وتتعدل لو استجابتك أو ظروفك اتغيرت.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Maintain — التثبيت</h4><p>الانتقال لمرحلة الحفاظ على النتيجة، مش سيبك لوحدك أول ما توصل لهدفك.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="explainability">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">ليه تصدقنا</span>
+      <h2>مش بس هنعملك خطة. هنخليك فاهم ليه اتعملت كده</h2>
+      <p>كل بديل وكل تعديل في خطتك ليه سبب واضح — مش قرار عشوائي.</p>
+    </div>
+    <div class="explain-box">
+      <div class="explain-q">ليه البديل ده؟</div>
+      <p class="explain-a">أكلك الحقيقي مش مشكلة لازم نلغيها. هو البيانات اللي بنبني منها الخطة — كل بديل بيتحسب على أساس مقاسات بيتك ومكوناتك الفعلية.</p>
+      <div class="explain-q">ليه الخطة اتغيرت؟</div>
+      <p class="explain-a">الخطة مش ثابتة. لو جسمك أو روتينك أو استجابتك اتغيرت، القرار بيتراجع ويتعدّل — مش بنستنى لحد ما تفشل الخطة بالكامل.</p>
+    </div>
+  </div>
+</section>
+
+<section class="white tight">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Egyptian Food Intelligence</span>
+      <h2>أكل مصري حقيقي، مش ترجمة تقريبية</h2>
+    </div>
+    <div class="fi-flow">
+      <div class="fi-step"><div class="k">الأكل</div><p>صنف الطعام زي ما بتاكله فعلًا في بيتك</p></div>
+      <div class="fi-step"><div class="k">المقاس</div><p>مقاسات بيتية حقيقية — ملعقة، رغيف، طبق</p></div>
+      <div class="fi-step"><div class="k">الهدف الغذائي</div><p>السعرات والماكروز المناسبة لمرحلتك</p></div>
+      <div class="fi-step"><div class="k">البديل المعتمد</div><p>بديل مقبول وفق قواعد محددة، مش تخمين</p></div>
+      <div class="fi-step"><div class="k">السبب</div><p>ليه البديل ده اتاختار بالذات ليك</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">النتائج</span>
+      <h2>بنبني مكتبة نتائج حقيقية</h2>
+      <p>مش هنحط قبل/بعد أو أرقام مش حقيقية عشان نبيع أسرع.</p>
+    </div>
+    <div class="results-box">
+      <h4>الحالات الحقيقية هتتنشر هنا أول ما توافق على نشرها</h4>
+      <p>كل قصة نجاح هتتحط هنا بموافقة صريحة من العميل، مع السياق الكامل: المشكلة، التقييم، التدخل، والنتيجة. لحد ما يحصل، مش هنعرض أرقام أو صور مش موثّقة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="programs white" id="programs">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">البرامج والأسعار</span>
+      <h2>ابدأ من حيث انت، وطلّع للمستوى اللي يناسبك</h2>
+      <p>دي أسعار إطلاق تجريبية بنراجعها بعد أول دفعة عملاء في كل برنامج.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog">
+        <div class="tag">دليل رقمي · نقطة بداية</div>
+        <h4>Ultimate Transformation Pack</h4>
+        <p>نظام عملي كامل: دليل أكل مصري، مقاسات بيتية، بدائل، وصفات، دليل مطاعم، عادات أكل، أكل عاطفي، وتتبع.</p>
+        <div class="meta">800 جنيه · إطلاق</div>
+      </div>
+      <div class="prog">
+        <div class="tag">برنامج 21 يوم</div>
+        <h4>21-Day Reset</h4>
+        <p>مهمة يومية بسيطة لمدة 21 يوم بتاخدك من "عارف إني لازم أخس" لـ"بقيت أتحكم في أكلي وسلوكي فعلًا"، بمتابعة يومية.</p>
+        <div class="meta">1,000 جنيه · إطلاق</div>
+      </div>
+      <div class="prog flagship">
+        <div class="tag">البرنامج الرئيسي · 1:1</div>
+        <h4>Premium Transformation</h4>
+        <p>رحلة كاملة معاك شخصيًا عبر نظام Newtrition الخمس مراحل، بمستويات START / TRANSFORM / EVOLVE حسب عمق المتابعة اللي محتاجها.</p>
+        <div class="meta">من 10,000 جنيه (متوسط الباقة) · إطلاق</div>
+      </div>
+      <div class="prog">
+        <div class="tag">B2B · تعليم احترافي</div>
+        <h4>Newtrition Pro — Beta</h4>
+        <p>كورس تطبيقي بالعربي لأخصائيي التغذية والمدربين — من التقييم الإكلينيكي لاختيار الاستراتيجية ومتابعة النتائج، مع Case Lab وToolkit احترافي.</p>
+        <div class="meta">5,000 جنيه · Founding Beta</div>
+      </div>
+    </div>
+    <p class="price-note">الدفع حاليًا عن طريق فودافون كاش أو انستاباي على رقم 01060663566 — تبعت اسكرين شوت التحويل وهنأكد حجزك على طول.</p>
+  </div>
+</section>
+
+<section class="about-grid wrap" id="about" style="padding-top:80px;padding-bottom:80px;">
+  <div class="about-card">
+    <div class="role">مؤسس Newtrition</div>
+    <h3>د. محمد سامي</h3>
+    <p>أخصائي تغذية إكلينيكية، متخصص في علاج زيادة الوزن من جذورها: الاضطرابات الهرمونية، اضطرابات الأكل، والعلاقة النفسية والسلوكية مع الطعام.</p>
+    <ul class="credentials">
+      <li>تقييم إكلينيكي شامل لكل حالة</li>
+      <li>تخصص في الحالات الهرمونية والمقاومة للتخسيس التقليدي</li>
+      <li>إشراف طبي على كل خطة قبل التسليم — مفيش قرار آلي بيتاخد من غير مراجعة</li>
+    </ul>
+  </div>
+  <div class="about-text">
+    <span class="kicker">ليه Newtrition</span>
+    <h2>مش رجيم بيتفرض عليك، رجيم بيتفهم منك</h2>
+    <p>معظم اللي بيجيلي كانوا جربوا أكتر من رجيم قبل كده، ونفس المشكلة بترجع تاني. المشكلة مش إرادة، المشكلة إن حد ما فهمش السبب من الأول.</p>
+    <ul>
+      <li>كل بديل في خطتك ليه سبب واضح تقدر تفهمه، مش "بديل قريب" عشوائي</li>
+      <li>قاعدة بيانات أكل مصري حقيقي — مقاسات بيتك مش تقديرات أجنبية مترجمة</li>
+      <li>مفيش قرار طبي أو تعديل خطة من غير مراجعة د. سامي شخصيًا على كل حالة</li>
+    </ul>
+  </div>
+</section>
+
+<section class="white" id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head">
+      <span class="kicker">أسئلة شائعة</span>
+      <h2>قبل ما تبدأ</h2>
+    </div>
+    <details open><summary>هل التقييم فعلًا مجاني؟</summary><p>التقييم الأولي بيساعدنا نفهم حالتك ونحدد أنسب برنامج ليك، ومش استشارة إكلينيكية كاملة بديلة عن الفحص الطبي لو محتاج تحويل لتخصص تاني.</p></details>
+    <details><summary>إزاي بادفع؟</summary><p>حاليًا عن طريق فودافون كاش أو انستاباي على رقم 01060663566، وبعد التحويل تبعت اسكرين شوت على واتساب وهنأكد حجزك.</p></details>
+    <details><summary>هل كل خطة بتتراجع من د. سامي شخصيًا؟</summary><p>أيوه، مفيش خطة أو تعديل بيتاخد قرار فيه بشكل آلي بالكامل — المراجعة الإكلينيكية جزء أساسي من كل مرحلة.</p></details>
+    <details><summary>هل ده بديل عن زيارة دكتور لو عندي حالة صحية؟</summary><p>لأ. لو حالتك محتاجة تقييم أو تدخل طبي خارج نطاق التغذية، هنوجهك للتخصص المناسب. Newtrition مش بديل عن الرعاية الطبية الطارئة أو التشخيص المتخصص.</p></details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>مستعد تفهم السبب الحقيقي لوزنك؟</h2>
+    <p>ابدأ بتقييم شامل، ونحدد سوا أنسب برنامج ليك من غير ما تتحط في خطة جاهزة لكل الناس.</p>
+    <a href="assessment.html" class="cta-btn">ابدأ تقييم حالتك</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Newtrition <span>· Dr / Sami</span></div>
+        <p>منظومة تغذية مصرية متكاملة لعلاج زيادة الوزن من جذورها — للعملاء وللأخصائيين على حد سواء.</p>
+      </div>
+      <div>
+        <h5>البرامج</h5>
+        <ul>
+          <li><a href="#programs">Premium Transformation</a></li>
+          <li><a href="#programs">21-Day Reset</a></li>
+          <li><a href="#programs">Ultimate Transformation Pack</a></li>
+          <li><a href="#programs">Newtrition Pro</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>تواصل وسياسات</h5>
+        <ul>
+          <li><a href="https://wa.me/201016555232" target="_blank">واتساب: 01016555232</a></li>
+          <li><a href="https://www.instagram.com/dr.mohamed_sami" target="_blank">إنستجرام: dr.mohamed_sami</a></li>
+          <li><a href="legal.html">الإخلاء الطبي · الخصوصية · الاسترجاع</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Newtrition. كل الحقوق محفوظة.</span>
+      <span>المحتوى الطبي بإشراف د. محمد سامي</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a href="assessment.html">ابدأ تقييم حالتك</a></div>
+
+</body>
+</html>
