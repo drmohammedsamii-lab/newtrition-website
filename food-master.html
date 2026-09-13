@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Master — بحث بدائل الأكل — Newtrition</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0E3B2E;--navy-soft:#06231C;--burgundy:#3F7D2C;--gold:#71B443;--gray:#5C6B63;--rule:#DCE7DC;--paper:#F7F5F1;--white:#FFFFFF;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Readex Pro',sans-serif;color:var(--navy);background:var(--paper);line-height:1.75;font-size:17px;}
+  a{color:inherit;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+  header{padding:26px 0;border-bottom:1px solid var(--rule);background:var(--white);}
+  .brand{font-weight:800;font-size:20px;}
+  main{padding:48px 0 80px;}
+  .kicker{display:inline-block;font-size:14px;color:var(--burgundy);font-weight:700;border-inline-start:3px solid var(--burgundy);padding-inline-start:12px;margin-bottom:18px;}
+  h1{font-size:27px;margin-bottom:14px;color:var(--navy);line-height:1.4;}
+  main > .wrap > p.lead{color:var(--gray);font-size:16px;margin-bottom:30px;}
+  .search-box{display:flex;gap:10px;margin-bottom:30px;}
+  .search-box input{flex:1;padding:14px 16px;border:1px solid var(--rule);border-radius:4px;font-family:'Readex Pro',sans-serif;font-size:15px;}
+  .search-box button{background:var(--navy);color:var(--white);border:none;padding:14px 24px;border-radius:4px;font-weight:700;cursor:pointer;}
+  .results{border:1px solid var(--rule);background:var(--white);min-height:80px;}
+  .result-item{padding:16px 20px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:12px;font-size:14.5px;}
+  .result-item:first-child{border-top:none;}
+  .result-item .name{color:var(--navy);font-weight:600;}
+  .result-item .macro{color:var(--gray);font-size:13px;white-space:nowrap;}
+  .status{padding:20px;text-align:center;color:var(--gray);font-size:14px;}
+  footer{text-align:center;padding:24px 0;color:var(--gray);font-size:13px;}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="index.html" class="brand"><img src="assets/logo.png" alt="Newtrition" style="height:34px;display:block;"></a></div></header>
+
+<main>
+  <div class="wrap">
+    <span class="kicker">مجانًا لأي زائر</span>
+    <h1>ابحث عن أي صنف أكل واعرف سعراته ومقاسه البيتي</h1>
+    <p class="lead">اكتب اسم الصنف بالعربي أو الإنجليزي.</p>
+
+    <div class="search-box">
+      <input type="text" id="q" placeholder="مثلاً: فول، أرز، صدر فراخ...">
+      <button onclick="search()">بحث</button>
+    </div>
+
+    <div class="results" id="results">
+      <div class="status">اكتب اسم صنف واضغط بحث</div>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Newtrition · <a href="index.html">الرئيسية</a></footer>
+
+<script>
+  // TODO: استبدل ده برابط الـ backend الحقيقي على Railway بعد نشر endpoint البحث
+  const API_BASE = 'https://YOUR-RAILWAY-DOMAIN.up.railway.app';
+
+  async function search() {
+    const q = document.getElementById('q').value.trim();
+    const box = document.getElementById('results');
+    if (q.length < 2) { box.innerHTML = '<div class="status">اكتب حرفين على الأقل</div>'; return; }
+    box.innerHTML = '<div class="status">جاري البحث...</div>';
+    try {
+      const res = await fetch(`${API_BASE}/api/foods/search?q=${encodeURIComponent(q)}`);
+      if (!res.ok) throw new Error('server error');
+      const data = await res.json();
+      if (!data.results || data.results.length === 0) {
+        box.innerHTML = '<div class="status">مفيش نتائج، جرب اسم تاني</div>';
+        return;
+      }
+      box.innerHTML = data.results.map(r => `
+        <div class="result-item">
+          <span class="name">${r.name}${r.serving_note ? ' — ' + r.serving_note : ''}</span>
+          <span class="macro">${r.kcal} kcal · P${r.protein} C${r.carbs} F${r.fat}</span>
+        </div>
+      `).join('');
+    } catch (e) {
+      box.innerHTML = '<div class="status">في مشكلة مؤقتة، حاول تاني بعد شوية</div>';
+    }
+  }
+  document.getElementById('q').addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
+</script>
+</body>
+</html>
