@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>وصفات ونصائح مجانية — Newtrition</title>
+<title>وصفات وتمارين ونصائح مجانية — Newtrition</title>
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<meta property="og:title" content="وصفات ونصائح مجانية — Newtrition">
-<meta property="og:description" content="عينة من موسوعة وصفات Newtrition المصرية المحسوبة — أكل حقيقي بسعرات واضحة.">
+<meta property="og:title" content="وصفات وتمارين ونصائح مجانية — Newtrition">
+<meta property="og:description" content="عينة من موسوعة Newtrition — 780 وصفة مصرية محسوبة، ومكتبة تمارين بيت وجيم.">
 <meta property="og:image" content="https://thenewtrition.com/assets/og-image.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,21 +33,32 @@
   .kicker{display:inline-block;font-size:14px;color:var(--burgundy);font-weight:700;border-inline-start:3px solid var(--burgundy);padding-inline-start:12px;margin-bottom:18px;}
   h1{font-size:29px;margin-bottom:16px;color:var(--navy);line-height:1.42;}
   main > .wrap > p.lead{color:var(--gray);font-size:16.5px;margin-bottom:36px;max-width:640px;}
-  h2{font-size:21px;color:var(--navy);margin:44px 0 16px;}
+  h2{font-size:21px;color:var(--navy);margin:44px 0 4px;}
+  .section-note{font-size:13.5px;color:var(--gray);margin-bottom:18px;}
 
-  /* lead magnet box */
   .magnet{background:var(--navy);border-radius:6px;padding:30px 26px;color:var(--white);margin-bottom:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
   .magnet div h3{font-size:18px;margin-bottom:6px;}
   .magnet div p{color:#C9DED2;font-size:14px;max-width:420px;}
   .magnet .cta-btn{background:var(--gold);color:var(--navy);padding:13px 26px;border-radius:4px;font-weight:700;font-size:15px;white-space:nowrap;}
 
-  .cat-label{font-size:13px;color:var(--burgundy);font-weight:700;margin-bottom:14px;}
   .recipe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
-  .recipe-card{background:var(--white);padding:20px 20px;}
-  .recipe-card h4{font-size:16px;color:var(--navy);margin-bottom:8px;}
-  .macro{font-size:13px;color:var(--gray);display:flex;gap:10px;flex-wrap:wrap;}
+  .recipe-card{background:var(--white);padding:18px 20px;}
+  .recipe-card h4{font-size:15.5px;color:var(--navy);margin-bottom:8px;}
+  .macro{font-size:13px;color:var(--gray);display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
   .macro b{color:var(--navy);}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;}
+  .badge{background:var(--paper);border:1px solid var(--rule);color:var(--burgundy);font-size:11px;padding:2px 8px;border-radius:10px;}
   @media(max-width:640px){.recipe-grid{grid-template-columns:1fr;} .magnet{flex-direction:column;text-align:center;}}
+
+  .ex-table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--rule);font-size:13.5px;margin-bottom:8px;display:block;overflow-x:auto;white-space:nowrap;}
+  .ex-table th{background:var(--paper);color:var(--navy);text-align:right;padding:10px 12px;font-size:12.5px;}
+  .ex-table td{padding:10px 12px;border-top:1px solid var(--rule);color:var(--gray);}
+  .ex-table td:first-child{color:var(--navy);font-weight:600;}
+
+  .toc-list{border:1px solid var(--rule);background:var(--white);display:grid;grid-template-columns:1fr 1fr;}
+  .toc-item{padding:12px 18px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--gray);display:flex;gap:10px;}
+  .toc-item b{color:var(--gold);min-width:18px;}
+  @media(max-width:640px){.toc-list{grid-template-columns:1fr;}}
 
   footer{text-align:center;padding:24px 0;color:var(--gray);font-size:13px;margin-top:40px;}
 </style>
@@ -58,63 +69,170 @@
 <main>
   <div class="wrap">
     <span class="kicker">مجانًا لأي زائر</span>
-    <h1>عينة من موسوعة Newtrition — 796 وصفة مصرية محسوبة</h1>
-    <p class="lead">كل وصفة عندنا مكتوب جنبها السعرات والبروتين والكارب والدهون، عشان تاكل صح من غير ما تحسب بنفسك.</p>
+    <h1>عينة من موسوعة Newtrition — 780 وصفة، ومكتبة تمارين كاملة</h1>
+    <p class="lead">كل وصفة عندنا مكتوب جنبها السعرات والماكروز ومتناسبة مع أي نظام (كيتو، هاي بروتين، نباتي...)، وكل تمرين له بديل تعمله في البيت من غير معدات.</p>
 
     <div class="magnet">
       <div>
-        <h3>عايز الـ796 وصفة كاملة؟</h3>
-        <p>احصل على نسخة أوسع من الوصفات + دليل قياس بالمقاسات البيتية، مجانًا على واتساب.</p>
+        <h3>عايز الموسوعة كاملة (780 وصفة) أو دليل التمارين الشامل؟</h3>
+        <p>احصل عليهم مجانًا على واتساب — بالسعرات، البدائل، ولينكات الصور والفيديو لكل وصفة.</p>
       </div>
-      <a class="cta-btn" href="https://wa.me/201016555232" target="_blank">ابعتلي الوصفات</a>
+      <a class="cta-btn" href="https://wa.me/201016555232" target="_blank">ابعتلي النسخة الكاملة</a>
     </div>
 
-    <h2>فطار وبدايات اليوم</h2>
+    <h2>فطار <span style="color:var(--gray);font-weight:400;font-size:14px;">(102 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>زبادي بالفواكه والشوفان</h4><div class="macro"><span><b>329</b> kcal</span><span>P 25.6g</span><span>C 46.1g</span><span>F 3.6g</span></div></div>
-      <div class="recipe-card"><h4>جبنة قريش بالطماطم والزعتر</h4><div class="macro"><span><b>386</b> kcal</span><span>P 28.4g</span><span>C 36.8g</span><span>F 14.4g</span></div></div>
+      <div class="recipe-card">
+        <h4>فطيرة فول وجبنة قريش</h4>
+        <div class="macro"><span><b>352</b> kcal</span><span>P 22.0g</span><span>C 58.1g</span><span>F 4.1g</span></div>
+        <div class="badges"><span class="badge">دايت متوازن</span><span class="badge">نباتي (يسمح بالألبان)</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>فول بالصلصة</h4>
+        <div class="macro"><span><b>109</b> kcal</span><span>P 5.8g</span><span>C 10.6g</span><span>F 3.5g</span></div>
+        <div class="badges"><span class="badge">عجز سعرات (تنشيف)</span><span class="badge">خالي من الجلوتين</span></div>
+      </div>
     </div>
 
-    <h2>أطباق رئيسية — لحوم ودواجن</h2>
+    <h2>دجاج ولحوم <span style="color:var(--gray);font-weight:400;font-size:14px;">(220 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>برجر اللحم بالشوفان</h4><div class="macro"><span><b>567</b> kcal</span><span>P 50.8g</span><span>C 42.7g</span><span>F 20.3g</span></div></div>
-      <div class="recipe-card"><h4>فتة باذنجان بالدجاج</h4><div class="macro"><span><b>428</b> kcal</span><span>P 38.5g</span><span>C 45.7g</span><span>F 10.4g</span></div></div>
+      <div class="recipe-card">
+        <h4>الدجاج بالبطاطس والزعتر</h4>
+        <div class="macro"><span><b>387</b> kcal</span><span>P 49.5g</span><span>C 31.5g</span><span>F 5.6g</span></div>
+        <div class="badges"><span class="badge">هاي بروتين</span><span class="badge">خالي من الجلوتين</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>فراخ فتة بالعيش المحمص</h4>
+        <div class="macro"><span><b>425</b> kcal</span><span>P 47.5g</span><span>C 33.6g</span><span>F 10.5g</span></div>
+        <div class="badges"><span class="badge">هاي بروتين</span><span class="badge">دايت متوازن</span></div>
+      </div>
     </div>
 
-    <h2>وجبات وأطباق متنوعة</h2>
+    <h2>أسماك ومأكولات بحرية <span style="color:var(--gray);font-weight:400;font-size:14px;">(51 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>بيتزا عيش بلدي بالخضار والجبنة</h4><div class="macro"><span><b>317</b> kcal</span><span>P 20.5g</span><span>C 48.1g</span><span>F 5.1g</span></div></div>
-      <div class="recipe-card"><h4>ساندويتش سناك نباتي</h4><div class="macro"><span><b>280</b> kcal</span><span>P 15.8g</span><span>C 32.5g</span><span>F 9.7g</span></div></div>
+      <div class="recipe-card">
+        <h4>سمك سلمون مشوي مع كينوا وخضار</h4>
+        <div class="macro"><span><b>467</b> kcal</span><span>P 37.0g</span><span>C 28.6g</span><span>F 22.3g</span></div>
+        <div class="badges"><span class="badge">هاي بروتين</span><span class="badge">خالي من الجلوتين</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>جمبري بالكاري</h4>
+        <div class="macro"><span><b>218</b> kcal</span><span>P 48.2g</span><span>C 2.4g</span><span>F 1.8g</span></div>
+        <div class="badges"><span class="badge">كيتو / لو كارب</span><span class="badge">عجز سعرات</span></div>
+      </div>
     </div>
 
-    <h2>أطباق رئيسية — أسماك ومأكولات بحرية</h2>
+    <h2>أرز ومكرونة <span style="color:var(--gray);font-weight:400;font-size:14px;">(96 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>جمبري بالثوم والليمون</h4><div class="macro"><span><b>298</b> kcal</span><span>P 54.1g</span><span>C 8.6g</span><span>F 6.0g</span></div></div>
-      <div class="recipe-card"><h4>فتة سمك خفيفة</h4><div class="macro"><span><b>470</b> kcal</span><span>P 52.0g</span><span>C 51.5g</span><span>F 6.5g</span></div></div>
+      <div class="recipe-card">
+        <h4>كشري عالي البروتين بالتونة</h4>
+        <div class="macro"><span><b>431</b> kcal</span><span>P 39.1g</span><span>C 55.7g</span><span>F 6.0g</span></div>
+        <div class="badges"><span class="badge">هاي بروتين</span><span class="badge">دايت متوازن</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>مكرونة جمبري دايت</h4>
+        <div class="macro"><span><b>404</b> kcal</span><span>P 44.3g</span><span>C 45.8g</span><span>F 4.8g</span></div>
+        <div class="badges"><span class="badge">هاي بروتين</span><span class="badge">دايت متوازن</span></div>
+      </div>
     </div>
 
-    <h2>سلطات وشوربات</h2>
+    <h2>سلطات وشوربات <span style="color:var(--gray);font-weight:400;font-size:14px;">(32 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>شوربة خضار بالعدس</h4><div class="macro"><span><b>282</b> kcal</span><span>P 18.9g</span><span>C 52.3g</span><span>F 1.3g</span></div></div>
-      <div class="recipe-card"><h4>سلطة التونة بالبروكلي</h4><div class="macro"><span><b>174</b> kcal</span><span>P 33.0g</span><span>C 7.0g</span><span>F 1.4g</span></div></div>
+      <div class="recipe-card">
+        <h4>شوربة طماطم بالزبادي</h4>
+        <div class="macro"><span><b>173</b> kcal</span><span>P 8.7g</span><span>C 24.1g</span><span>F 6.2g</span></div>
+        <div class="badges"><span class="badge">عجز سعرات (تنشيف)</span><span class="badge">خالي من الجلوتين</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>سلطة البيض والبطاطس</h4>
+        <div class="macro"><span><b>198</b> kcal</span><span>P 8.9g</span><span>C 22.8g</span><span>F 7.9g</span></div>
+        <div class="badges"><span class="badge">خالي من الجلوتين</span></div>
+      </div>
     </div>
 
-    <h2>سناكس ومقبلات</h2>
+    <h2>ساندوتشات وسناكس خفيفة <span style="color:var(--gray);font-weight:400;font-size:14px;">(21 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>فول مدمس كسناك</h4><div class="macro"><span><b>203</b> kcal</span><span>P 13.3g</span><span>C 37.9g</span><span>F 0.9g</span></div></div>
-      <div class="recipe-card"><h4>شوفان بالزبادي والفاكهة</h4><div class="macro"><span><b>278</b> kcal</span><span>P 21.6g</span><span>C 36.9g</span><span>F 3.8g</span></div></div>
+      <div class="recipe-card">
+        <h4>ساندوتش الأفوكادو والخس والطماطم</h4>
+        <div class="macro"><span><b>355</b> kcal</span><span>P 16.0g</span><span>C 32.0g</span><span>F 19.0g</span></div>
+        <div class="badges"><span class="badge">دايت متوازن</span><span class="badge">نباتي (يسمح بالألبان)</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>عجينة التورتيلا</h4>
+        <div class="macro"><span><b>141</b> kcal</span><span>P 4.0g</span><span>C 18.3g</span><span>F 5.8g</span></div>
+        <div class="badges"><span class="badge">نباتي (فيجان)</span></div>
+      </div>
     </div>
 
-    <h2>حلويات ومشروبات</h2>
+    <h2>سناكس <span style="color:var(--gray);font-weight:400;font-size:14px;">(40 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>براوني كاكاو وشوفان</h4><div class="macro"><span><b>365</b> kcal</span><span>P 18.0g</span><span>C 59.0g</span><span>F 10.0g</span></div></div>
-      <div class="recipe-card"><h4>موز مشوي بالكاكاو</h4><div class="macro"><span><b>215</b> kcal</span><span>P 4.8g</span><span>C 44.8g</span><span>F 5.7g</span></div></div>
+      <div class="recipe-card">
+        <h4>كرات تمر بالشوفان</h4>
+        <div class="macro"><span><b>384</b> kcal</span><span>P 10.8g</span><span>C 76.0g</span><span>F 7.9g</span></div>
+        <div class="badges"><span class="badge">دايت متوازن</span><span class="badge">نباتي (فيجان)</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>بطاطس محمرة بالفرن</h4>
+        <div class="macro"><span><b>246</b> kcal</span><span>P 5.0g</span><span>C 42.5g</span><span>F 6.2g</span></div>
+        <div class="badges"><span class="badge">عجز سعرات (تنشيف)</span><span class="badge">نباتي (فيجان)</span></div>
+      </div>
     </div>
 
-    <h2>Keto و Low-Carb</h2>
+    <h2>حلويات <span style="color:var(--gray);font-weight:400;font-size:14px;">(105 وصفة)</span></h2>
     <div class="recipe-grid">
-      <div class="recipe-card"><h4>فلفل محشي كيتو</h4><div class="macro"><span><b>410</b> kcal</span><span>P 57g</span><span>C 18.9g</span><span>F 11.4g</span></div></div>
-      <div class="recipe-card"><h4>لازانيا كيتو</h4><div class="macro"><span><b>165.5</b> kcal</span><span>P 8.3g</span><span>C 36.4g</span><span>F 0.3g</span></div></div>
+      <div class="recipe-card">
+        <h4>مهلبية لايت</h4>
+        <div class="macro"><span><b>214</b> kcal</span><span>P 8.9g</span><span>C 36.9g</span><span>F 3.8g</span></div>
+        <div class="badges"><span class="badge">عجز سعرات (تنشيف)</span><span class="badge">خالي من الجلوتين</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>كيك الموز</h4>
+        <div class="macro"><span><b>181</b> kcal</span><span>P 4.2g</span><span>C 28.0g</span><span>F 5.6g</span></div>
+        <div class="badges"><span class="badge">عجز سعرات (تنشيف)</span><span class="badge">نباتي (يسمح بالألبان)</span></div>
+      </div>
+    </div>
+
+    <h2>أطباق متنوعة <span style="color:var(--gray);font-weight:400;font-size:14px;">(113 وصفة)</span></h2>
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>سموذي الفراولة</h4>
+        <div class="macro"><span><b>316</b> kcal</span><span>P 32.3g</span><span>C 32.3g</span><span>F 6.0g</span></div>
+        <div class="badges"><span class="badge">هاي بروتين</span><span class="badge">خالي من الجلوتين</span></div>
+      </div>
+      <div class="recipe-card">
+        <h4>كرات البطاطس بالجبنة</h4>
+        <div class="macro"><span><b>298</b> kcal</span><span>P 14.0g</span><span>C 43.2g</span><span>F 7.4g</span></div>
+        <div class="badges"><span class="badge">عجز سعرات (تنشيف)</span><span class="badge">نباتي (يسمح بالألبان)</span></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:64px;">عينة من مكتبة التمارين</h2>
+    <p class="section-note">من دليل Newtrition الشامل للتمارين — كل تمرين جيم ليه بديل تعمله في البيت من غير معدات.</p>
+    <table class="ex-table">
+      <tr><th>التمرين (جيم)</th><th>العضلة</th><th>الجرعة المبدئية</th><th>بديل منزلي</th></tr>
+      <tr><td>Dumbbell Bench Press</td><td>الصدر</td><td>3 × 8–12</td><td>Push-up</td></tr>
+      <tr><td>Lat Pulldown</td><td>الظهر</td><td>3–4 × 8–12</td><td>Band Pulldown</td></tr>
+      <tr><td>Dumbbell Shoulder Press</td><td>الأكتاف</td><td>3 × 8–12</td><td>Pike Push-up</td></tr>
+      <tr><td>Barbell Back Squat</td><td>الكواد + Glutes</td><td>3–4 × 6–12</td><td>Goblet / Bodyweight Squat</td></tr>
+      <tr><td>Plank</td><td>Core</td><td>3 × 20–60 ثانية</td><td>Knee Plank</td></tr>
+    </table>
+    <p class="section-note">التمرين مش عقاب على الأكل ومش بديل عن التغذية — هو جزء مكمّل لإدارة الوزن. الدليل الكامل فيه 5 أقسام عضلات + كارديو + بيت بدون أدوات + نماذج جداول جاهزة لأي مستوى.</p>
+
+    <h2 style="margin-top:64px;">جوه دليل التخسيس العملي</h2>
+    <p class="section-note">المرجع الكامل اللي بييجي مع Ultimate Transformation Pack — 17 فصل بيغطوا كل حاجة ممكن توقفك.</p>
+    <div class="toc-list">
+      <div class="toc-item"><b>1</b>قواعد بسيطة تخلي نزولك أسهل</div>
+      <div class="toc-item"><b>2</b>الكمية أولًا</div>
+      <div class="toc-item"><b>3</b>أخطاء الطبخ</div>
+      <div class="toc-item"><b>4</b>الفاكهة والمشروبات</div>
+      <div class="toc-item"><b>5</b>الجوع والشبع</div>
+      <div class="toc-item"><b>6</b>الميزان والنزول</div>
+      <div class="toc-item"><b>7</b>المحافظة على الوزن</div>
+      <div class="toc-item"><b>8</b>اللخبطة والفري ميل</div>
+      <div class="toc-item"><b>9</b>المطاعم والعزومات والسفر</div>
+      <div class="toc-item"><b>15</b>رمضان والصيام</div>
+      <div class="toc-item"><b>16</b>قواعد الحياة اليومية</div>
+      <div class="toc-item"><b>17</b>قائمة البدائل الغذائية</div>
     </div>
   </div>
 </main>
