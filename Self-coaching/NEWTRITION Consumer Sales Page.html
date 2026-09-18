@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#06231C">
+<title>NEWTRITION Self-Coaching System — منظومة التخسيس والأكل والتمرين بنفسك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light;
+    --deep:#06231C; --dark:#0E3B2E; --green:#3F7D2C; --bright:#71B443;
+    --muted:#5C6B63; --rule:#DCE7DC; --cream:#F7FAF6; --ink:#12211B;
+    --warn-bg:#FDECEA; --warn:#C0392B;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; background:var(--cream);}
+  body{
+    margin:0; font-family:"Noto Sans Arabic",sans-serif; color:var(--ink);
+    background:var(--cream); direction:rtl; line-height:1.75; font-size:16px;
+  }
+  section.band{background:var(--cream);}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 20px;}
+  .band{padding:56px 0;}
+  .band.deep{background:linear-gradient(160deg,var(--deep) 0%,var(--dark) 100%); color:#fff;}
+  .band.dark{background:var(--dark); color:#fff;}
+  .band.line{border-bottom:1px solid var(--rule);}
+  h1,h2,h3{margin:0 0 14px 0; font-weight:900; line-height:1.35;}
+  h1{font-size:clamp(28px,6vw,42px);}
+  h2{font-size:clamp(22px,5vw,30px); color:var(--dark);}
+  .band.deep h2, .band.dark h2{color:#fff;}
+  h3{font-size:18px; color:var(--dark);}
+  p{margin:0 0 12px 0;}
+  .lead{font-size:19px; font-weight:500;}
+  .eyebrow{
+    display:inline-block; font-size:13px; font-weight:700; color:var(--bright);
+    background:rgba(113,180,67,.12); border:1px solid rgba(113,180,67,.4);
+    border-radius:20px; padding:4px 14px; margin-bottom:18px;
+  }
+  .band.deep .eyebrow, .band.dark .eyebrow{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.25);}
+
+  .cta{
+    display:inline-block; background:var(--bright); color:var(--deep);
+    font-weight:900; font-size:17px; padding:16px 30px; border-radius:10px;
+    text-decoration:none; border:none; cursor:pointer; text-align:center;
+  }
+  .cta.block{display:block; width:100%;}
+  .cta.secondary{
+    background:transparent; color:inherit; border:1.5px solid currentColor;
+    padding:14px 28px; font-weight:700; font-size:15px;
+  }
+  .price-badge{
+    display:inline-flex; align-items:baseline; gap:8px; margin:18px 0;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; padding:12px 20px;
+  }
+  .price-badge .num{font-size:30px; font-weight:900; color:var(--bright);}
+  .price-badge .cur{font-size:15px; color:#DCE7DC;}
+
+  .trust-line{font-size:13.5px; color:var(--muted); margin-top:16px;}
+  .band.deep .trust-line, .band.dark .trust-line{color:#B9CFC4;}
+
+  .pain-list p{font-size:18px; font-weight:500; margin:0 0 10px 0;}
+  .pain-list .q{color:var(--bright); font-weight:900;}
+
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px;}
+  .compare .col{border-radius:12px; padding:18px;}
+  .compare .old{background:#F1EFE9; color:#6b6459;}
+  .compare .new{background:var(--dark); color:#fff;}
+  .compare h3{margin-bottom:10px; font-size:15px;}
+  .compare .old h3{color:#8a8073;}
+  .compare .new h3{color:var(--bright);}
+  .compare ul{margin:0; padding-inline-start:18px; font-size:14px;}
+  .compare li{margin-bottom:8px;}
+
+  .book-card{
+    background:#fff; border:1px solid var(--rule); border-radius:14px;
+    padding:24px; margin-bottom:16px; border-inline-start:5px solid var(--green);
+  }
+  .book-card .num{color:var(--bright); font-weight:900; font-size:13px; letter-spacing:1px;}
+  .book-card h3{font-size:20px; margin:4px 0 10px 0;}
+  .book-card ul{margin:0; padding-inline-start:18px; font-size:14.5px; color:var(--muted);}
+  .book-card li{margin-bottom:5px;}
+
+  .tool-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px;}
+  .tool-card{
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15);
+    border-radius:10px; padding:16px;
+  }
+  .tool-card .t{font-weight:800; font-size:14.5px; margin-bottom:6px; color:var(--bright);}
+  .tool-card .d{font-size:13px; color:#D7E5DD;}
+
+  .callout{border-radius:10px; padding:16px 18px; margin:18px 0; font-size:14.5px;}
+  .callout.tip{background:#EAF4E6; border-inline-start:4px solid var(--green);}
+  .callout.warn{background:var(--warn-bg); border-inline-start:4px solid var(--warn);}
+  .callout .label{display:block; font-weight:900; margin-bottom:4px;}
+  .callout.warn .label{color:var(--warn);}
+  .callout.tip .label{color:var(--dark);}
+
+  .who-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;}
+  .who-col h3{font-size:15px;}
+  .who-col ul{margin:0; padding-inline-start:18px; font-size:14px; color:var(--ink);}
+  .who-col li{margin-bottom:8px;}
+  .who-col.yes{border-inline-start:3px solid var(--green); padding-inline-start:14px;}
+  .who-col.no{border-inline-start:3px solid var(--warn); padding-inline-start:14px;}
+
+  .get-item{display:flex; gap:12px; align-items:flex-start; margin-bottom:16px;}
+  .get-item .ic{font-size:22px; line-height:1;}
+  .get-item .txt b{display:block; font-size:15.5px; margin-bottom:2px;}
+  .get-item .txt span{font-size:13.5px; color:var(--muted);}
+
+  .day-row{display:flex; gap:14px; align-items:flex-start; margin-bottom:18px; padding-bottom:18px; border-bottom:1px dashed var(--rule);}
+  .day-row:last-child{border-bottom:none;}
+  .day-row .time{min-width:66px; font-weight:900; color:var(--green); font-size:14px;}
+  .day-row .sit{font-size:15px; margin-bottom:4px;}
+  .day-row .go{font-size:13.5px; color:var(--muted);}
+
+  .np-row{font-size:17px; font-weight:700; margin-bottom:10px;}
+  .np-row .a{color:var(--muted); font-weight:500;}
+  .np-final{margin-top:20px; font-size:19px; font-weight:800; color:var(--dark);}
+
+  .price-box{
+    background:#fff; border:2px solid var(--dark); border-radius:16px;
+    padding:28px 24px; text-align:center; margin-top:24px;
+  }
+  .price-box .big{font-size:42px; font-weight:900; color:var(--dark);}
+  .price-box .once{font-size:14px; color:var(--muted); margin-bottom:18px;}
+  .price-box ul{text-align:right; margin:18px 0; padding-inline-start:0; list-style:none; font-size:14.5px;}
+  .price-box li{margin-bottom:9px; padding-inline-start:22px; position:relative;}
+  .price-box li::before{content:"✓"; position:absolute; right:0; color:var(--bright); font-weight:900; background:var(--dark); border-radius:50%; width:16px; height:16px; font-size:10px; display:flex; align-items:center; justify-content:center; top:2px;}
+
+  details{border-bottom:1px solid var(--rule); padding:16px 0;}
+  summary{font-weight:700; font-size:15.5px; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; font-size:22px; color:var(--green); font-weight:400;}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:10px; font-size:14.5px; color:var(--muted);}
+
+  footer{background:var(--deep); color:#B9CFC4; padding:36px 0; font-size:12.5px;}
+  footer .links{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:14px;}
+  footer .links a{text-decoration:underline;}
+  footer .disclaimer{border-top:1px solid rgba(255,255,255,.12); padding-top:14px; margin-top:14px;}
+
+  .sticky-cta{
+    position:fixed; bottom:0; right:0; left:0; background:var(--dark); color:#fff;
+    padding:12px 16px; display:flex; align-items:center; justify-content:space-between;
+    gap:10px; transform:translateY(100%); transition:transform .25s ease; z-index:50;
+    box-shadow:0 -4px 16px rgba(0,0,0,.2);
+  }
+  .sticky-cta.show{transform:translateY(0);}
+  .sticky-cta .txt{font-size:13px; font-weight:700;}
+  .sticky-cta .cta{padding:10px 18px; font-size:14px;}
+
+  @media(max-width:560px){
+    .compare{grid-template-columns:1fr;}
+    .who-grid{grid-template-columns:1fr;}
+    .tool-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="band deep">
+  <div class="wrap" style="text-align:center;">
+    <span class="eyebrow">NEWTRITION | Consumer Self-Coaching</span>
+    <h1>مش محتاج دايت جديد كل مرة…<br>محتاج تعرف تعمل إيه بنفسك.</h1>
+    <p class="lead" style="color:#DCE7DC; max-width:520px; margin:0 auto 20px;">
+      منظومة NEWTRITION بتعلّمك تفهم نزول الوزن، تبني وجبتك من الأكل اللي بتحبه، تبدّل الأصناف، تبني برنامج تمرين مناسب ليك، وتعرف تتصرف لما يومك أو وزنك يتغيّر.
+    </p>
+    <div class="price-badge">
+      <span class="num">999</span><span class="cur">جنيه — دفع مرة واحدة</span>
+    </div>
+    <div>
+      <a href="#price" class="cta">ابدأ NEWTRITION بـ999 جنيه</a>
+    </div>
+    <div style="margin-top:12px;">
+      <a href="#whats-inside" class="cta secondary" style="border-color:rgba(255,255,255,.4);">شوف إيه اللي هتاخده</a>
+    </div>
+    <p class="trust-line">محتوى عربي عملي · مصمم للأكل والحياة اليومية في مصر · بدون Menu ثابت لازم تمشي عليه</p>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section class="band line">
+  <div class="wrap">
+    <h2>كل يوم فيه قرار… والمشكلة إنك مش عارف تاخده.</h2>
+    <div class="pain-list" style="margin-top:20px;">
+      <p>النهارده مفيش وقت تطبخ.</p>
+      <p>بكرة عندك عزومة.</p>
+      <p>بعده أكلت زيادة.</p>
+      <p>الأسبوع ده الوزن ثابت.</p>
+      <p>التمرين اللي بتعمله مش متاح.</p>
+      <p style="margin-top:16px;">وكل مرة ترجع تسأل: <span class="q">"أعمل إيه؟"</span></p>
+    </div>
+    <p style="font-weight:700; font-size:17px; color:var(--dark);">NEWTRITION معمول عشان يعلمك إزاي تجاوب السؤال ده بنفسك.</p>
+  </div>
+</section>
+
+<!-- ================= OLD WAY VS NEWTRITION ================= -->
+<section class="band" style="background:#fff;">
+  <div class="wrap">
+    <h2>الطريقة القديمة، مقابل NEWTRITION</h2>
+    <div class="compare">
+      <div class="col old">
+        <h3>من غير نظام</h3>
+        <ul>
+          <li>Menu ثابت لازم تمشي عليه</li>
+          <li>كل بديل محتاج سؤال حد تاني</li>
+          <li>يوم خارج الخطة = إحساس بالفشل</li>
+          <li>وزن يوم واحد = حكم على كل المجهود</li>
+          <li>التمرين يتغيّر حسب المزاج أو المتاح</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h3>مع NEWTRITION</h3>
+        <ul>
+          <li>تفهم القاعدة، مش تحفظ قائمة</li>
+          <li>تعرف تبدّل بنفسك من نفس الدور الغذائي</li>
+          <li>تتعامل مع المطاعم والسفر واللخبطة بخطوات واضحة</li>
+          <li>تراجع متوسط الأسبوع بدل رقم يوم واحد</li>
+          <li>تبني تمرينك حسب مكانك وأيامك المتاحة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 BOOKS ================= -->
+<section class="band line" id="whats-inside">
+  <div class="wrap">
+    <h2>مش 3 كتب… 3 مراحل تخليك تعتمد على نفسك.</h2>
+    <div style="margin-top:24px;">
+      <div class="book-card">
+        <div class="num">01 — افهم</div>
+        <h3>دليلك للتخسيس بنفسك</h3>
+        <ul>
+          <li>إيه اللي بيحرك الوزن، والسعرات كفكرة مبسّطة</li>
+          <li>البروتين والشبع، والميزان ومتوسط الأسبوع</li>
+          <li>ثبات الوزن، لو لخبطت، الأكل العاطفي</li>
+          <li>المطاعم والعزومات والسفر، ورمضان</li>
+          <li>المحافظة على الوزن، ومتى تحتاج مختص</li>
+        </ul>
+      </div>
+      <div class="book-card">
+        <div class="num">02 — ابنِ</div>
+        <h3>ابني وجبتك بنفسك</h3>
+        <ul>
+          <li>تبني الوجبة بالدور الغذائي، مش بوصفة ثابتة</li>
+          <li>مقاييس اليد، والأطعمة المركّبة</li>
+          <li>جدول التبادل الغذائي المعتمد من NEWTRITION</li>
+          <li>لو عايز سعرات أقل أو بروتين أعلى</li>
+          <li>مطعم وعزومة، وتحضير الوجبات وسلامة الغذاء</li>
+        </ul>
+      </div>
+      <div class="book-card">
+        <div class="num">03 — تمرّن</div>
+        <h3>تمرّن بنفسك</h3>
+        <ul>
+          <li>تختار مكانك (بيت أو جيم) وعدد أيامك</li>
+          <li>خريطة أنماط الحركة، واختيار التمارين المناسبة</li>
+          <li>المجموعات والتكرارات والراحة، واستخدام RIR</li>
+          <li>برامج 2 و3 و4 أيام كاملة، وبدائل البيت</li>
+          <li>الكارديو، الإحماء، ورمضان، وحدود السلامة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOOLS INSIDE THE BOOKS ================= -->
+<section class="band dark">
+  <div class="wrap">
+    <span class="eyebrow">مش هتقرأ وبس… هتستخدم</span>
+    <h2>جوه كل كتاب، مش بس شرح — أدوات تطبّقها فورًا.</h2>
+    <p style="color:#D7E5DD;">الكتب بتعلّمك. الجداول والورش جوّاها بتساعدك تاخد القرار فعليًا وقت ما تحتاجه.</p>
+    <div class="tool-grid">
+      <div class="tool-card"><div class="t">بناء الوجبة</div><div class="d">ابنِ وجبتك من الموجود عندك بدل ما تدوّر على وصفة</div></div>
+      <div class="tool-card"><div class="t">جدول التبادل الغذائي</div><div class="d">مش عندك صنف؟ شوف البديل من نفس المجموعة فورًا</div></div>
+      <div class="tool-card"><div class="t">فجوة البروتين</div><div class="d">اعرف أنت قريب قد إيه من هدفك، وإيه أسرع حل</div></div>
+      <div class="tool-card"><div class="t">السعرات المختفية</div><div class="d">اكتشف مصادر السعرات في الزيت والصوص والمشروبات</div></div>
+      <div class="tool-card"><div class="t">شجرة قرار المطاعم</div><div class="d">اتصرف في المطعم والعزومة من غير ما تحسب اليوم ضاع</div></div>
+      <div class="tool-card"><div class="t">تشخيص ثبات الوزن</div><div class="d">تسلسل واضح يوصلك لسبب الثبات قبل أي تعديل</div></div>
+      <div class="tool-card"><div class="t">لوحة المتابعة الأسبوعية</div><div class="d">تابع الاتجاه بدل ما تحكم من رقم يوم واحد</div></div>
+      <div class="tool-card"><div class="t">بناء برنامج التمرين</div><div class="d">اختار مكانك وأيامك ويوصلك برنامج جاهز بالتدرّج</div></div>
+    </div>
+    <div class="callout tip" style="margin-top:22px; background:rgba(255,255,255,.08); border-inline-start-color:var(--bright);">
+      <span class="label" style="color:var(--bright);">ملاحظة صريحة</span>
+      <span style="color:#D7E5DD;">دي جداول وورش عمل مطبوعة جوه الكتب الثلاثة، مش تطبيق منفصل — نسخة تفاعلية (Web App) للأدوات دي على خارطة الطريق القادمة.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO IS THIS FOR ================= -->
+<section class="band line" style="background:#fff;">
+  <div class="wrap">
+    <h2>مين المنظومة دي ليه؟</h2>
+    <div class="who-grid">
+      <div class="who-col yes">
+        <h3 style="color:var(--green);">مناسبة ليك لو:</h3>
+        <ul>
+          <li>جربت دايتات كتير ومش عايز تبدأ من الصفر كل مرة</li>
+          <li>مش بتحب Menu ثابت</li>
+          <li>عايز تفهم الكمية والبدائل</li>
+          <li>بتاكل أكل مصري عادي، وبره البيت أحيانًا</li>
+          <li>يومك مش ثابت</li>
+          <li>عايز تتمرن في البيت أو الجيم</li>
+        </ul>
+      </div>
+      <div class="who-col no">
+        <h3 style="color:var(--warn);">مش مناسبة ليك لو:</h3>
+        <ul>
+          <li>محتاج خطة علاجية فردية لحالة طبية معقدة</li>
+          <li>عندك حالة أو دواء يحتاج متابعة فردية</li>
+          <li>عمرك أقل من 18 سنة</li>
+          <li>حامل/مرضع</li>
+          <li>عندك اضطراب أكل أو اشتباه فيه</li>
+          <li>محتاج برنامج فردي بعد جراحة سمنة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT EXACTLY DO I GET ================= -->
+<section class="band">
+  <div class="wrap">
+    <h2>عند الشراء تحصل على إيه بالظبط؟</h2>
+    <div style="margin-top:20px;">
+      <div class="get-item"><div class="ic">📘</div><div class="txt"><b>دليلك للتخسيس بنفسك</b><span>16 فصل + Quick Reference — ملف PDF</span></div></div>
+      <div class="get-item"><div class="ic">📗</div><div class="txt"><b>ابني وجبتك بنفسك</b><span>15 فصل فيهم جدول التبادل الغذائي المعتمد — ملف PDF</span></div></div>
+      <div class="get-item"><div class="ic">📙</div><div class="txt"><b>تمرّن بنفسك</b><span>16 فصل ببرامج 2 و3 و4 أيام كاملة — ملف PDF</span></div></div>
+      <div class="get-item"><div class="ic">📋</div><div class="txt"><b>ورش عمل وجداول متابعة</b><span>لوحة أسبوعية، ورقة بناء وجبة، جدول تدرّج تمرين — مطبوعة داخل الكتب</span></div></div>
+      <div class="get-item"><div class="ic">🍽️</div><div class="txt"><b>طبقة الأكل المصري</b><span>بدائل وحصص عملية على السياق المصري اليومي</span></div></div>
+    </div>
+    <div class="callout warn">
+      <span class="label">حدود واضحة</span>
+      المنظومة دي تعليم عام وself-coaching للبالغين الأصحاء، مش تشخيص ولا خطة علاجية فردية، ولا تغني عن تقييم طبي أو غذائي عند الحاجة.
+    </div>
+  </div>
+</section>
+
+<!-- ================= A DAY WITH NEWTRITION ================= -->
+<section class="band line" style="background:#fff;">
+  <div class="wrap">
+    <h2>يوم عادي مع NEWTRITION</h2>
+    <div style="margin-top:20px;">
+      <div class="day-row"><div class="time">8:00 ص</div><div><div class="sit">مش عارف أفطر إيه؟</div><div class="go">← فصل بناء الوجبة (كتاب 2)</div></div></div>
+      <div class="day-row"><div class="time">1:00 م</div><div><div class="sit">مفيش دجاج في التلاجة؟</div><div class="go">← جدول التبادل الغذائي (كتاب 2)</div></div></div>
+      <div class="day-row"><div class="time">5:00 م</div><div><div class="sit">هتاكل بره؟</div><div class="go">← شجرة قرار المطاعم (كتاب 1)</div></div></div>
+      <div class="day-row"><div class="time">8:00 م</div><div><div class="sit">حاسس إن بروتينك ناقص؟</div><div class="go">← فصل فجوة البروتين (كتاب 2)</div></div></div>
+      <div class="day-row"><div class="time">الصبح</div><div><div class="sit">الميزان زاد شوية؟</div><div class="go">← فصل الميزان (كتاب 1)</div></div></div>
+      <div class="day-row"><div class="time">آخر الأسبوع</div><div><div class="sit">الوزن ثابت من كذا يوم؟</div><div class="go">← تشخيص ثبات الوزن (كتاب 1)</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NO PERFECT DAYS ================= -->
+<section class="band dark">
+  <div class="wrap">
+    <h2>NEWTRITION مش محتاج يوم مثالي.</h2>
+    <div style="margin-top:20px;">
+      <div class="np-row">يوم زحمة؟ <span class="a">اتصرف.</span></div>
+      <div class="np-row">عزومة؟ <span class="a">اتصرف.</span></div>
+      <div class="np-row">أكلت زيادة؟ <span class="a">ارجع.</span></div>
+      <div class="np-row">مفيش جهاز في الجيم؟ <span class="a">بدّل.</span></div>
+      <div class="np-row">الوزن اتحرك؟ <span class="a">راقب الاتجاه.</span></div>
+    </div>
+    <p class="np-final" style="color:var(--bright);">الهدف مش إنك متغلطش. الهدف إنك تعرف تعمل إيه بعد ما اليوم يتغيّر.</p>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="band" style="background:#fff;">
+  <div class="wrap">
+    <h2>المحتوى معمول بمنهج NEWTRITION</h2>
+    <div class="book-card" style="border-inline-start-color:var(--bright);">
+      <h3>ذكاء الأكل المصري</h3>
+      <p style="font-size:14.5px; color:var(--muted); margin:0;">مصمم حول الأكل المصري والمقاسات اليومية، مش ترجمة لمحتوى أجنبي.</p>
+    </div>
+    <div class="book-card" style="border-inline-start-color:var(--bright);">
+      <h3>قرارات مفهومة، مش قوائم ممنوعات</h3>
+      <p style="font-size:14.5px; color:var(--muted); margin:0;">الهدف إنك تفهم سبب القرار، عشان تقدر تاخده لوحدك في المرة الجاية.</p>
+    </div>
+    <div class="book-card" style="border-inline-start-color:var(--bright);">
+      <h3>مصدر حقيقة واحد</h3>
+      <p style="font-size:14.5px; color:var(--muted); margin:0;">الأرقام والبدائل الغذائية مبنية على قائمة NEWTRITION المعتمدة، مش أرقام متفرقة بين الكتب.</p>
+    </div>
+    <div class="book-card" style="border-inline-start-color:var(--bright);">
+      <h3>حدود أمان واضحة</h3>
+      <p style="font-size:14.5px; color:var(--muted); margin:0;">كل كتاب يوضّح من البداية مين يقدر يستخدم self-coaching، ومين يحتاج مختص.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICE ================= -->
+<section class="band line" id="price">
+  <div class="wrap">
+    <h2 style="text-align:center;">كل اللي تحتاجه عشان تبدأ — في باقة واحدة</h2>
+    <div class="price-box">
+      <div style="font-weight:800; color:var(--muted); font-size:14px;">NEWTRITION Self-Coaching System</div>
+      <div class="big">999 جنيه</div>
+      <div class="once">دفع مرة واحدة — بدون اشتراك شهري</div>
+      <ul>
+        <li>دليلك للتخسيس بنفسك (16 فصل)</li>
+        <li>ابني وجبتك بنفسك (15 فصل + جدول التبادل المعتمد)</li>
+        <li>تمرّن بنفسك (16 فصل + برامج 2/3/4 أيام)</li>
+        <li>كل الجداول والورش والقوائم داخل الكتب الثلاثة</li>
+      </ul>
+      <a href="https://wa.me/201016555232?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B4%D8%AA%D8%B1%D9%8A%20NEWTRITION%20Self-Coaching%20System" class="cta block">ابدأ NEWTRITION بـ999 جنيه</a>
+      <p style="font-size:12.5px; color:var(--muted); margin-top:12px;">هتتواصل معانا على واتساب لإتمام الشراء واستلام الملفات مباشرة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="band" style="background:#fff;">
+  <div class="wrap">
+    <h2>أسئلة شائعة</h2>
+    <div style="margin-top:10px;">
+      <details>
+        <summary>هل المنتج PDF بس؟</summary>
+        <p>الباقة 3 كتب عملية بصيغة PDF، وجوه كل كتاب جداول وورش عمل وأدوات تطبيقية جاهزة الاستخدام — مش تطبيق منفصل حاليًا.</p>
+      </details>
+      <details>
+        <summary>هل لازم أحسب سعرات؟</summary>
+        <p>لأ بالضرورة. عندك مسار بسيط بمقاييس اليد وبناء الوجبة، ومسار أدق بالأرقام لو بتحب الدقة أكتر.</p>
+      </details>
+      <details>
+        <summary>هل فيه Menu جاهز أمشي عليه؟</summary>
+        <p>الفكرة الأساسية عكس كده — إنك تتعلم تبني وتبدّل وجبتك بنفسك حسب المتاح عندك، مش تتقيد بقائمة ثابتة.</p>
+      </details>
+      <details>
+        <summary>هل الأكل المصري موجود؟</summary>
+        <p>نعم، المنظومة كلها مبنية حول الأكل المصري والبدائل والمقاسات العملية اليومية.</p>
+      </details>
+      <details>
+        <summary>مناسب للمبتدئ؟</summary>
+        <p>نعم، المحتوى يبدأ من الأساسيات ويتدرّج، سواء في التغذية أو في التمرين.</p>
+      </details>
+      <details>
+        <summary>مناسب للبيت والجيم؟</summary>
+        <p>نعم، كتاب التمرين فيه مسارات للاتنين وبدائل عملية لأي معدات ناقصة.</p>
+      </details>
+      <details>
+        <summary>هل ده بديل عن أخصائي تغذية؟</summary>
+        <p>لأ. المنتج مصمم لتعليم self-coaching للبالغين الأصحاء، ومش بديل عن مختص لو عندك حالة صحية أو محتاج تقييم فردي.</p>
+      </details>
+      <details>
+        <summary>إزاي هستلم المنتج بعد الدفع؟</summary>
+        <p>بعد التواصل والاتفاق على الدفع، هتوصلك الكتب الثلاثة مباشرة على واتساب أو إيميل.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="band deep" style="text-align:center;">
+  <div class="wrap">
+    <h2>جاهز تبطل تبدأ من الصفر كل مرة؟</h2>
+    <p style="color:#DCE7DC;">اتعلم النظام، استخدم الأدوات اللي جوه الكتب، وابدأ تاخد قراراتك بنفسك.</p>
+    <div class="price-badge"><span class="num">999</span><span class="cur">جنيه</span></div>
+    <div><a href="https://wa.me/201016555232?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B4%D8%AA%D8%B1%D9%8A%20NEWTRITION%20Self-Coaching%20System" class="cta">ابدأ NEWTRITION الآن</a></div>
+    <p class="trust-line">للبالغين الأصحاء وللتثقيف العام. لا يمثل المنتج تشخيصًا أو علاجًا فرديًا.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div style="font-weight:900; color:#fff; font-size:16px; margin-bottom:10px;">NEWTRITION</div>
+    <div class="links">
+      <a href="https://thenewtrition.com" target="_blank">الموقع الرئيسي</a>
+      <a href="https://wa.me/201016555232">تواصل واتساب</a>
+      <a href="mailto:Dr.mohammedsamii@gmail.com">راسلنا بالإيميل</a>
+    </div>
+    <div class="disclaimer">
+      هذا المنتج للتثقيف العام وself-coaching للبالغين الأصحاء، وليس تشخيصًا أو علاجًا فرديًا، ولا يغني عن التقييم الطبي أو الغذائي عند الحاجة.
+      <br><br>
+      سياسة الاسترجاع وسياسة الخصوصية والشروط الكاملة هتتحدد وتتضاف هنا قبل الإطلاق الرسمي.
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="txt">NEWTRITION Self-Coaching — 999 جنيه</div>
+  <a href="https://wa.me/201016555232?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B4%D8%AA%D8%B1%D9%8A%20NEWTRITION%20Self-Coaching%20System" class="cta">ابدأ الآن</a>
+</div>
+
+<script>
+  const hero = document.querySelector('.band.deep');
+  const sticky = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    const heroH = hero.offsetHeight;
+    if (window.scrollY > heroH) sticky.classList.add('show');
+    else sticky.classList.remove('show');
+  });
+</script>
+
+</body>
+</html>
