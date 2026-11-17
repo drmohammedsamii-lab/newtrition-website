@@ -26,9 +26,15 @@
   li{margin-inline-start:20px;}
   footer{text-align:center;padding:24px 0;color:var(--gray);font-size:13px;}
 </style>
+<link rel="stylesheet" href="assets/chrome.css">
 </head>
 <body>
-<header><div class="wrap"><a href="index.html" class="brand"><img src="assets/logo.png" alt="Newtrition" style="height:34px;display:block;"></a></div></header>
+<header class="nt-h"><div class="nt-hr">
+  <a href="index.html" class="nt-logo" aria-label="Newtrition — الرئيسية"><img src="assets/logo-sm.png" alt="Newtrition" width="100" height="32"></a>
+  <nav class="nt-nav" id="ntNav" aria-label="القائمة الرئيسية"><a href="index.html#journey">رحلتك</a><a href="app/">التطبيق</a><a href="programs.html">متابعة شخصية</a><a href="mizan.html">MIZAN</a><a href="courses.html">للأخصائيين</a></nav>
+  <a class="nt-hcta" href="app/#/assessment" data-ev="start_assessment">ابدأ التقييم</a>
+  <button type="button" class="nt-menu" aria-label="القائمة" aria-expanded="false" aria-controls="ntNav">☰</button>
+</div></header>
 
 <main><div class="wrap">
   <h1>السياسات والإخلاء الطبي</h1>
@@ -47,6 +53,7 @@
   <p>البيانات اللي بتدخلها في نموذج التقييم (الاسم، السن، الهدف، رقم التواصل، وأي تفاصيل تانية) بتُستخدم فقط لتحديد أنسب برنامج ليك والتواصل معاك، ومش بتتباع أو تتشارك مع أي جهة تالتة لأغراض تسويقية.</p>
   <p>التواصل بيتم بشكل أساسي عبر واتساب، وأي بيانات صحية حساسة بتتعامل معاها بسرية طبية.</p>
 
+  <p><b>تطبيق Newtrition والتقييم المجاني (thenewtrition.com/app):</b> إجاباتك وتسجيلاتك جوه التطبيق بتتحفظ في متصفحك على جهازك بس، ومش بتتبعت لينا، إلا لو اخترت بنفسك تبعت ملخص نتيجتك على واتساب. التفاصيل الكاملة في صفحة «عن الأداة · الخصوصية» جوه التطبيق.</p>
   <h2>سياسة الدفع والاسترجاع</h2>
   <p>الدفع حاليًا يتم يدويًا عن طريق فودافون كاش أو انستاباي، ويُعتبر الحجز مؤكدًا بعد إرسال إثبات التحويل ومراجعته.</p>
   <p>سياسة الاسترجاع التفصيلية (المدة، الشروط، الاستثناءات) لسه قيد التحديد النهائي — هتُعلن بوضوح قبل أي عملية دفع فعلية، ويقدر العميل يسأل عنها مباشرة قبل التحويل.</p>
@@ -59,6 +66,21 @@
   </ul>
 </div></main>
 
-<footer>© 2026 Newtrition · <a href="index.html">الرئيسية</a></footer>
+<footer class="nt-f"><div class="w">
+  <div class="nt-fg">
+    <div><img src="assets/logo-light-sm.png" alt="Newtrition" width="88" height="28"><p>تغذية مصرية بتبدأ من فهم السبب: تقييم مجاني، أدوات تتابع بيها نفسك، ومتابعة شخصية لو محتاجها.</p></div>
+    <div><h5>ابدأ</h5><ul><li><a href="app/#/assessment">التقييم المجاني</a></li><li><a href="app/">تطبيق Newtrition</a></li><li><a href="index.html#journey">رحلتك خطوة بخطوة</a></li></ul></div>
+    <div><h5>ملحقات</h5><ul><li><a href="programs.html">برامج المتابعة الشخصية</a></li><li><a href="mizan.html">MIZAN — التخسيس بنفسك</a></li><li><a href="courses.html">للأخصائيين: الكورسات والسوفتوير</a></li><li><a href="learn.html">وصفات ونصائح مجانية</a></li></ul></div>
+    <div><h5>تواصل وسياسات</h5><ul><li><a href="https://wa.me/201016555232" target="_blank" rel="noopener">واتساب: 01016555232</a></li><li><a href="https://www.instagram.com/dr.mohamed_sami" target="_blank" rel="noopener">إنستجرام: dr.mohamed_sami</a></li><li><a href="legal.html">الإخلاء الطبي · الخصوصية · الاسترجاع</a></li></ul></div>
+  </div>
+  <div class="nt-fb"><span>© 2026 Newtrition. كل الحقوق محفوظة.</span><span>المحتوى توعوي ومش بديل عن الدكتور.</span></div>
+</div></footer>
+<script>
+(function(){var b=document.querySelector('.nt-menu'),n=document.getElementById('ntNav');if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false');}});}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;var h=a.getAttribute('href')||'';
+ if(/app\/#\/assessment/.test(h))gtag('event','click_start_assessment',{link_text:a.textContent.trim().slice(0,60)});
+ else if(/^app\/?$/.test(h))gtag('event','click_open_app',{link_text:a.textContent.trim().slice(0,60)});
+ else if(/wa\.me/.test(h))gtag('event','click_whatsapp',{page:location.pathname});});})();
+</script>
 </body>
 </html>
