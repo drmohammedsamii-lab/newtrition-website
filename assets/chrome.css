@@ -1,0 +1,24 @@
+
+/* ===== v2 shared chrome (header with mobile menu, footer, cards) ===== */
+.nt-h{position:sticky;top:0;z-index:50;padding:0;background:rgba(247,245,241,.96);backdrop-filter:blur(8px);border-bottom:1px solid #DCE7DC;font-family:'Readex Pro',sans-serif}
+.nt-hr{display:flex;align-items:center;justify-content:space-between;gap:14px;height:70px;max-width:1120px;margin:0 auto;padding:0 20px}
+.nt-logo img{height:32px;width:auto;display:block}
+.nt-nav{display:flex;gap:22px;align-items:center}
+.nt-nav a{font-size:14.5px;color:#06231C;font-weight:500;text-decoration:none}
+.nt-nav a:hover,.nt-nav a.on{color:#3F7D2C}
+.nt-hcta{background:#3F7D2C;color:#fff!important;padding:10px 20px;border-radius:999px;font-weight:600;font-size:14.5px;white-space:nowrap;text-decoration:none}
+.nt-menu{display:none;background:none;border:1px solid #DCE7DC;border-radius:10px;width:44px;height:44px;font-size:20px;color:#0E3B2E;cursor:pointer}
+@media(max-width:860px){
+  .nt-menu{display:block}.nt-hcta{padding:9px 14px;font-size:13.5px}
+  .nt-nav{display:none;position:absolute;top:70px;inset-inline:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid #DCE7DC;box-shadow:0 12px 24px rgba(14,59,46,.08)}
+  .nt-nav.open{display:flex}.nt-nav a{padding:15px 20px;border-top:1px solid #EEF2EC;font-size:15.5px}
+}
+.nt-f{background:#06231C;color:#C9DED2;padding:44px 0 26px;font-family:'Readex Pro',sans-serif;font-size:14px;text-align:right;border:0;margin:0;line-height:1.75}
+.nt-f .w{max-width:1120px;margin:0 auto;padding:0 20px}
+.nt-fg{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+.nt-f h5{color:#fff;font-size:15px;margin:0 0 10px}.nt-f ul{list-style:none;margin:0;padding:0}.nt-f li{margin:6px 0}
+.nt-f a{color:#C9DED2;text-decoration:none}.nt-f a:hover{color:#fff}
+.nt-f img{height:28px;width:auto;margin-bottom:10px}
+.nt-fb{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px}
+@media(max-width:760px){.nt-fg{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.nt-fg{grid-template-columns:1fr}}
