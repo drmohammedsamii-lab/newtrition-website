@@ -1,6 +1,6 @@
 /* Newtrition service worker — الشبكة أولًا، والكاش احتياطي لو النت مقطوع.
    غيّر رقم CACHE مع كل نسخة جديدة عشان الكاش القديم يتمسح. بيانات العميل (localStorage) مش بتتأثر. */
-const CACHE = 'newtrition-app-3.44';
+const CACHE = 'newtrition-app-3.45';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 /* ملفات الأدوات (بتتحمّل عند الفتح). بنحمّلها في الخلفية بعد التثبيت عشان التطبيق يشتغل من غير نت من غير ما نبطّئ أول فتحة. */
 const DATA = ['articles','exchange','exercise-guide','food-master','instructions','journal','meals','mizan','my-week','qa-bank','recipes','workout'].map(n => './data/' + n + '.bin?v=3.44');
